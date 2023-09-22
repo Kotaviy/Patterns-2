@@ -22,10 +22,10 @@ class AuthTest {
     @Test
     @DisplayName("Should successfully login with active registered user")
     void shouldSuccessfulLoginIfRegisteredActiveUser() {
-        var registeredUser = getUser("active");
+        var registeredUser = getRegisteredUser("active");
         $("[data-test-id=login] input").setValue(registeredUser.getLogin());
         $("[data-test-id=password] input").setValue(registeredUser.getPassword());
-        $("[data-test-id='action-login']").click();
+        $("[data-test-id='action-login' ]").click();
         $("h2").shouldBe(Condition.visible).shouldHave(Condition.exactText("Личный кабинет"));
     }
 
